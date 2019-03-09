@@ -10,8 +10,8 @@
       <div class="footer-sitemap">
         <ul class="footer-sitemap-list m-block-list">
           <li class="footer-sitemap-list__item m-block-list__item"><a href="<?php echo home_url(); ?>/company/">企業情報</a></li>
-          <li class="footer-sitemap-list__item m-block-list__item"><a href="<?php echo home_url(); ?>/information/">キャンプ場</a></li>
-          <li class="footer-sitemap-list__item m-block-list__item"><a href="<?php echo home_url(); ?>/access/">アクセス</a></li>
+          <li class="footer-sitemap-list__item m-block-list__item"><a href="<?php echo home_url(); ?>/camp/">キャンプ場</a></li>
+          <li class="footer-sitemap-list__item m-block-list__item"><a href="<?php echo home_url(); ?>/company#access">アクセス</a></li>
           <li class="footer-sitemap-list__item m-block-list__item"><a href="<?php echo home_url(); ?>/topics/">トピックス</a></li>
         </ul>
         <ul class="footer-sitemap-list m-block-list">

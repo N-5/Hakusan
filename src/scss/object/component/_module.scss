@@ -93,6 +93,7 @@
   }
 }
 
+//title
 .m-page-title {
   color: $color-main;
   font-weight: bold;
@@ -121,6 +122,19 @@
   }
 }
 
+%m-section-title___margin {
+  margin: 60px 0 30px;
+  text-align: center;
+
+  @media (--md) {
+    margin: 80px 0 45px;
+  }
+
+  @media (--lg) {
+    margin: 100px 0 50px;
+  }
+}
+
 .m-block-title {
   color: $color-main;
   font-size: 18px;
@@ -128,6 +142,24 @@
 
   @media (--md) {
     font-size: 22px;
+  }
+}
+
+%m-block-title___margin {
+  margin-bottom: 10px;
+
+  @media (--md) {
+    margin-bottom: 20px;
+  }
+}
+
+.m-card-title {
+  color: $color-main;
+  font-size: 16px;
+  font-weight: bold;
+
+  @media (--md) {
+    font-size: 20px;
   }
 }
 
@@ -145,6 +177,7 @@
   }
 }
 
+//list
 .m-block-list {
   &__item {
     display: flex;

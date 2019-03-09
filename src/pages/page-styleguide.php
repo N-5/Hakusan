@@ -11,6 +11,7 @@ Template Name: styleguide
      <div class="b1-container">
        <h2 class="m-section-title">セクションタイトル</h2>
        <h3 class="m-block-title">ブロックタイトル</h3>
+       <h4 class="m-card-title">カードタイトル</h4>
        <h3 class="m-block-title__border">ブロックタイトル</h3>
        <ul class="m-block-list">
          <li class="m-block-list__item">リスト</li>
@@ -22,7 +23,7 @@ Template Name: styleguide
        <div class="m-link"><a href="">詳しく見る</a></div>
        <div class="m-link__border"><a href="">詳しく見る</a></div>
        <div class="m-link__text"><a href="">詳しく見る</a></div>
-       <div class="pagination">
+       <div class="c-pagination">
          <a class="prev page-numbers" href="">前へ</a>
          <span class="page-numbers current">1</span>
          <a class="page-numbers" href="">2</a>
@@ -93,6 +94,7 @@ Template Name: styleguide
       </div>
     </div>
   </section>
+  
   <section class="b3">
     <div class="l-container">
       <div class="l-align">
@@ -111,6 +113,7 @@ Template Name: styleguide
       </div>
     </div>
   </section>
+  
   <section class="b4">
     <div class="l-container">
       <p class="u-xl">u-el<br>フォントサイズ１8pxです。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
@@ -118,13 +121,13 @@ Template Name: styleguide
       <p class="u-m">u-m<br>標準フォントサイズ１４pxです。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
       <p class="u-s">u-s<br>フォントサイズ１２pxです。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
       <p class="u-es">u-es<br>フォントサイズ１0pxです。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-      <table class="l-table">
-        <tbody class="l-table-list">
-          <tr class="l-table-list__item">
+      <table class="c-table__col2">
+        <tbody class="c-table-list">
+          <tr class="c-table-list__item">
             <th class="title">テキスト</th>
             <td class="detail">テキストテキストテキストテキストテキスト</td>
           </tr>
-          <tr class="l-table-list__item">
+          <tr class="c-table-list__item">
             <th class="title">テキスト</th>
             <td class="detail">テキストテキストテキストテキストテキスト</td>
           </tr>

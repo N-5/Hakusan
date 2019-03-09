@@ -74,7 +74,6 @@
         text-align: center;
 
         @media (--md_max) {
-          padding: 15px 0;
           border-bottom: 2px solid $color-white;
         }
 
@@ -98,9 +97,11 @@
           justify-content: center;
           height: 100%;
           width: 100%;
+          padding: 15px 0;
 
           @media (--md) {
             flex-direction: column;
+            padding: 0;
           }
 
           i {

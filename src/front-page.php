@@ -35,26 +35,7 @@
       </div>
 	</section>
 
-	<section class="index-topics">
-	  <div class="index-topics__inner">
-        <div class="index-topics__title">
-          <p class="en">TOPICS</p>
-          <h2 class="jp"><span>トピックス</span></h2>
-        </div>
-        <div class="index-topics-list">
-          <article class="index-topics-list__item">
-            <a href="">
-              <div class="time"><time>2018.12.18</time></div>
-              <div class="detail">
-                <div class="title">タイトルが入ります。タイトルが入ります。</div>
-                <div class="category">カテゴリ</div>
-              </div>
-            </a>
-          </article>
-        </div>
-	  </div>
-      <div class="m-link"><a href="">一覧を見る</a></div>
-	</section>
+	<?php get_template_part('inc/topics'); ?>
 
 	<section class="index-access">
 	  <div class="index-access__inner">
