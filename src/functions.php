@@ -1,14 +1,14 @@
 <?php
 
-//remove wp jquery
-function my_delete_local_jquery() {
-  wp_deregister_script('jquery');
-}
-add_action( 'wp_enqueue_scripts', 'my_delete_local_jquery' );
 
 //remove Emojis
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+function update_nag_hide() {
+  remove_action( 'admin_notices', 'update_nag', 3 );
+}
+add_action( 'admin_init', 'update_nag_hide' );
 
 //remove embed
 function crave_disable_embeds() {
@@ -138,19 +138,19 @@ function  pageNavigation () {
 
 //custom-post-type
 function implement_custom_posts($value='') {
-  $news = (object) array(
-    "slug" => "news",
-    "name" => "ニュース",
+  $link = (object) array(
+    "slug" => "link",
+    "name" => "リンク",
     "has_archive" => true,
   );
-  $blog = (object) array(
-    "slug" => "blog",
-    "name" => "ブログ",
+  $topics = (object) array(
+    "slug" => "topics",
+    "name" => "トピックス",
     "has_archive" => true,
   );
   $contents_array = [
-    $news,
-    $blog
+    $link,
+    $topics
   ];
   foreach ($contents_array as $key => $value) {
     add_custom($value);

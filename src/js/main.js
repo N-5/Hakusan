@@ -1,12 +1,11 @@
 import menu from './modules/menu.js';
-import hover from './modules/hover';
 import slide from './modules/slider';
 import pagetop from './modules/pagetop';
-import 'aos';
+import hover from './modules/hover';
 
 export default [
   menu(),
-  hover(),
   slide(),
-  pagetop()
+  pagetop(),
+  hover()
 ];

@@ -109,6 +109,9 @@ footer {
 
       .footer-sitemap-list__item {
         @media (--sm_max) {
+          padding: 10px 0;
+          text-indent: 0;
+          margin-left: 0;
           border-bottom: 1px solid #e0e0e0;
         }
 

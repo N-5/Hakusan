@@ -7,21 +7,21 @@ Template Name: camp
 <main id="camp">
   <section class="camp-information">
     <div class="l-container">
-      <h1 class="m-page-title"><span>清流の郷 瀬波川キャンプ場</span></h1>
-      <h2 class="m-block-title">イラストマップ</h2>
-      <div class="camp-information__illust"><img src="<?php echo get_template_directory_uri(); ?>/img/camp/camp-information.jpg" alt="イラストマップ"></div>
+      <h1 class="m-page-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"><span>清流の郷 瀬波川キャンプ場</span></h1>
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">イラストマップ</h2>
+      <div class="camp-information__illust" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200"><img src="<?php echo get_template_directory_uri(); ?>/img/camp/camp-information.jpg" alt="イラストマップ"></div>
     </div>
   </section>
 
   <section class="camp-contact">
     <div class="l-container">
       <div class="l-col2">
-        <div class="l-col2__item">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
           <h3 class="m-block-title">ご予約</h3>
           <p class="u-m">予約申込はこちらから</p>
           <div class="m-link"><a href="<?php echo home_url(); ?>/reserve/">ご予約はこちら</a></div>
         </div>
-        <div class="l-col2__item">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
           <h3 class="m-block-title">注意事項</h3>
           <p class="u-m">ダウンロードはこちら</p>
           <div class="m-link"><a href="<?php echo get_template_directory_uri(); ?>/pdf/camp_form.pdf">PDF</a></div>
@@ -34,8 +34,8 @@ Template Name: camp
 
   <section class="camp-guide">
     <div class="l-container">
-      <h2 class="m-block-title">利用案内</h2>
-      <table class="c-table__col2">
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">利用案内</h2>
+      <table class="c-table__col2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         <tbody class="c-table-list">
           <tr class="c-table-list__item">
             <th class="title">利用期間</th>
@@ -67,8 +67,8 @@ Template Name: camp
   </section>
   <section class="camp-leisure">
     <div class="l-container">
-      <h2 class="m-block-title">レジャー体験</h2>
-      <div class="l-col3">
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">レジャー体験</h2>
+      <div class="l-col3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         <div class="l-col3__item">
           <div class="image"><img src="<?php echo get_template_directory_uri(); ?>/img/common/col-img.jpg"></div>
           <div class="m-card-title">ゴリ採り体験</div>
@@ -104,8 +104,8 @@ Template Name: camp
   </section>
   <section class="camp-price">
     <div class="l-container__large">
-      <h2 class="m-block-title">料金表</h2>
-      <div class="camp-price__usage">
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">料金表</h2>
+      <div class="camp-price__usage" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
         <div class="u-md">
           <table class="c-table__flex">
             <tbody>
@@ -236,7 +236,7 @@ Template Name: camp
           </table>
         </div>
       </div>
-      <div class="camp-price__rental">
+      <div class="camp-price__rental" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         <div class="u-md">
           <table class="c-table__flex">
             <tbody>
@@ -325,7 +325,7 @@ Template Name: camp
           </table>
         </div>
       </div>
-      <div class="camp-price__sale">
+      <div class="camp-price__sale" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
         <div class="u-md">
           <table class="c-table__flex">
             <tbody>
@@ -369,12 +369,12 @@ Template Name: camp
   <section class="camp-contact">
     <div class="l-container">
       <div class="l-col2">
-        <div class="l-col2__item">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
           <h3 class="m-block-title">ご予約</h3>
           <p class="u-m">予約申込はこちらから</p>
           <div class="m-link"><a href="<?php echo home_url(); ?>/reserve/">ご予約はこちら</a></div>
         </div>
-        <div class="l-col2__item">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
           <h3 class="m-block-title">注意事項</h3>
           <p class="u-m">ダウンロードはこちら</p>
           <div class="m-link"><a href="<?php echo get_template_directory_uri(); ?>/pdf/camp_form.pdf">PDF</a></div>

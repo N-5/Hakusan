@@ -1,6 +1,7 @@
 .header {
   height: 70px;
   background: $color-main;
+  overflow: hidden;
 
   @media (--md) {
     height: 120px;
@@ -127,7 +128,7 @@
             }
 
             @media (--lg) {
-              font-size: 14px;
+              font-size: 13px;
             }
           }
 

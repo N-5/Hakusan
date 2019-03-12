@@ -7,11 +7,9 @@ Template Name: company
 <main id="company">
   <section class="company-information">
     <div class="l-container">
-      <div class="l-page-title">
-        <h1 class="m-page-title"><span>企業情報</span></h1>
-      </div>
-      <h3 class="m-block-title">会社概要</h3>
-      <table class="c-table__col2">
+      <h1 class="m-page-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"><span>企業情報</span></h1>
+      <h3 class="m-block-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">会社概要</h3>
+      <table class="c-table__col2" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
         <tbody class="c-table-list">
           <tr class="c-table-list__item">
             <th class="title">社名（商号）</th>
@@ -41,7 +39,7 @@ Template Name: company
             <th class="title">主要取引先</th>
             <td class="detail">北國銀行、JAバンク</td>
           </tr>
-          <tr class="c-table-list__item">
+          <tr id="access" class="c-table-list__item">
             <th class="title">事業内容</th>
             <td class="detail">
               <ul class="m-block-list">
@@ -55,7 +53,7 @@ Template Name: company
               </ul>
             </td>
           </tr>
-          <tr id="access" class="c-table-list__item">
+          <tr class="c-table-list__item access">
             <th class="title">アクセスマップ</th>
             <td class="detail">
               <p class="access-text">石川県白山市瀬波子19番地5</p>
@@ -76,9 +74,9 @@ Template Name: company
   
   <section class="company-pdf">
     <div class="l-container">
-      <h2 class="m-block-title">年間行事の報告書PDF</h2>
-      <p class="u-m">ダウンロードはこちら</p>
-      <div class="m-link"><a href="<?php echo get_template_directory_uri(); ?>/pdf/camp_form.pdf">PDF</a></div>
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="200">年間行事の報告書PDF</h2>
+      <p class="u-m" data-aos="fade-up" data-aos-delay="400">ダウンロードはこちら</p>
+      <div class="m-link" data-aos="fade-up" data-aos-delay="600"><a href="<?php echo get_template_directory_uri(); ?>/pdf/camp_form.pdf">PDF</a></div>
     </div>
   </section>
 </main>
