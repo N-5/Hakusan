@@ -97,9 +97,13 @@
 .m-page-title {
   color: $color-main;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 28px;
 
   @media (--md) {
+    font-size: 32px;
+  }
+
+  @media (--lg) {
     font-size: 34px;
   }
 
@@ -123,7 +127,7 @@
 }
 
 %m-section-title___margin {
-  margin: 60px 0 30px;
+  margin: 40px 0 30px;
   text-align: center;
 
   @media (--md) {

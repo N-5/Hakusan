@@ -58,6 +58,10 @@ footer {
       @media (--md) {
         text-align: left;
       }
+
+      a {
+        display: inline-block;
+      }
     }
   }
 
@@ -108,15 +112,19 @@ footer {
       width: 100%;
 
       .footer-sitemap-list__item {
+        display: flex;
+        align-items: center;
+        text-indent: 0;
+        margin-left: 0;
+
         @media (--sm_max) {
-          padding: 10px 0;
-          text-indent: 0;
-          margin-left: 0;
           border-bottom: 1px solid #e0e0e0;
         }
 
         a {
-          padding: 8px 0;
+          display: inline-block;
+          width: 100%;
+          padding: 12px 0;
           transition: .24s ease all;
 
           @media (--md) {

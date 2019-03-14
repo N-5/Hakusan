@@ -9,7 +9,7 @@ Template Name: reserve-confirm
     <div class="l-container__small">
       <h1 class="m-page-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"><span>ご予約</span></h1>
       <div class="contact-form__lead" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-        <p class="u-m">以下の内容をお確かめの上、「送信」ボタンをクリックして下さい。</p>
+        <p class="u-s">以下の内容をお確かめの上、<br class="u-sm_max">「送信」ボタンをクリックして下さい。</p>
      </div>
       <div class="contact-form__input" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
        <?php while(have_posts()): the_post(); ?>

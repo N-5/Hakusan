@@ -11,19 +11,20 @@
             <div class="detail">
               <div class="title"><?php the_title(); ?></div>
               <div class="category">
-                <?php
-                  $custom_post_tag = 'topics-category';
+                <div class="category">
+                  <?php $custom_post_tag = 'topics-category';
                   $custom_post_tag_terms = wp_get_object_terms($post->ID, $custom_post_tag);
                   if(!empty($custom_post_tag_terms)){
                     if(!is_wp_error( $custom_post_tag_terms )){
                       foreach($custom_post_tag_terms as $term){
                         $tag_term_link = get_term_link($term->slug, $custom_post_tag);
                         $tag_term_name = $term->name;
-                        echo $tag_term_name;
+                        echo '<div class="item">'.$tag_term_name.'</div>';
                       }
                     }
                   }
-                ?>
+                  ?>
+                </div>
               </div>
             </div>
           </a>

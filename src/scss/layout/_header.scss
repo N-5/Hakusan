@@ -19,6 +19,10 @@
     @media (--md) {
       padding: 0 0 0 5%;
     }
+
+    @media (--lg) {
+      padding: 0 40px;
+    }
   }
 
   .header-logo {
@@ -133,10 +137,12 @@
           }
 
           &:hover {
-            background: $color-white;
+            @media (--md) {
+              background: $color-white;
 
-            span {
-              color: $color-main;
+              span {
+                color: $color-main;
+              }
             }
           }
         }

@@ -28,6 +28,8 @@
 .c-paging {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 10;
 
   .c-paging__prev {
     span {
@@ -186,7 +188,7 @@
         .title {
           margin-top: 5px;
           font-weight: bold;
-          font-size: 16px;
+          font-size: 15px;
           transition: .24s ease all;
 
           @media (--md) {
@@ -196,17 +198,25 @@
         }
 
         .category {
-          display: inline-block;
+          display: flex;
           margin-top: 5px;
-          padding: 3px 8px;
-          font-size: 12px;
-          color: $color-main;
-          border-radius: 5px;
-          background: $color-main-light;
 
           @media (--md) {
             margin-top: 15px;
             font-size: 14px;
+          }
+
+          .item {
+            margin: 0 3px;
+            padding: 3px 14px;
+            font-size: 12px;
+            border-radius: 5px;
+            color: $color-main;
+            background: $color-main-light;
+
+            &:first-child {
+              margin: 0 3px 0 0;
+            }
           }
         }
       }
@@ -252,12 +262,14 @@
 
       th {
         display: block;
-        color: $color-main;
+        margin-bottom: 6px;
         padding-top: 14px;
+        color: $color-main;
         font-weight: bold;
 
         @media (--sm) {
           width: 20%;
+          margin-bottom: 0;
           border-top: 1px solid $color-main;
           padding: 20px 0 20px 0;
         }
@@ -317,6 +329,10 @@
           margin-top: 10px;
           font-size: 11px;
           line-height: 1.4;
+        }
+
+        small {
+          font-size: 10px;
         }
       }
 
@@ -380,15 +396,15 @@
 
     span {
       &.color-red {
-        color: #ff00;
+        color: rgba(255, 0, 0, 1);
       }
 
       &.color-yellow {
-        color: #ffd800;
+        color: rgba(255, 216, 0, 1);
       }
 
       &.color-blue {
-        color: #0a00ff;
+        color: rgba(10, 0, 255, 1);
       }
 
       &.under-red {
@@ -415,6 +431,10 @@
     display: block;
     margin: 15px auto;
     max-width: 100%;
+
+    @media (--sm_max) {
+      width: 100%;
+    }
 
     @media (--sm) {
       margin: 20px 0;
@@ -462,37 +482,37 @@
     @media (--sm) {
       margin: 40px 0 20px;
       padding-bottom: 10px;
-      font-size: 26px;
+      font-size: 24px;
     }
 
     @media (--md) {
       margin: 60px 0 30px;
-      font-size: 30px;
+      font-size: 26px;
     }
   }
 
   h3 {
     margin: 20px 0 15px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.4;
     font-weight: bold;
     color: $color-main;
 
     @media (--sm) {
       margin: 40px 0 20px;
-      font-size: 22px;
+      font-size: 20px;
     }
 
     @media (--md) {
       margin: 60px 0 30px;
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 
   h4 {
     margin: 20px 0 15px;
     padding-bottom: 5px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: $color-main;
     line-height: 1.4;
@@ -500,13 +520,19 @@
     @media (--sm) {
       margin: 40px 0 20px;
       padding-bottom: 10px;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     @media (--md) {
       margin: 60px 0 30px;
       font-size: 20px;
     }
+  }
+
+  h5 {
+    font-size: 14px;
+    color: $color-main;
+    font-weight: bold;
   }
 
   blockquote {
@@ -536,16 +562,19 @@
     }
 
     &::before {
-      content: '';
-      background: url(images/blockquote_1.png) no-repeat center/contain;
-      top: 10px;
-      left: 15px;
+      content: '“';
+      top: 5px;
+      left: 6px;
+
+      @media (--md) {
+        top: 10px;
+        left: 15px;
+      }
     }
 
     &::after {
-      content: '';
-      background: url(images/blockquote_2.png) no-repeat center/contain;
-      bottom: 10px;
+      content: '”';
+      bottom: 20px;
       right: 10px;
     }
   }

@@ -7,8 +7,8 @@ Template Name: camp
 <main id="camp">
   <section class="camp-information">
     <div class="l-container">
-      <h1 class="m-page-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"><span>清流の郷 瀬波川キャンプ場</span></h1>
-      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">イラストマップ</h2>
+      <h1 class="m-page-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"><span>清流の郷<br class="u-sm_max"> 瀬波川キャンプ場</span></h1>
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">イラストマップ</h2>
       <div class="camp-information__illust" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200"><img src="<?php echo get_template_directory_uri(); ?>/img/camp/camp-information.jpg" alt="イラストマップ"></div>
     </div>
   </section>
@@ -16,12 +16,12 @@ Template Name: camp
   <section class="camp-contact">
     <div class="l-container">
       <div class="l-col2">
-        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
           <h3 class="m-block-title">ご予約</h3>
           <p class="u-m">予約申込はこちらから</p>
           <div class="m-link"><a href="<?php echo home_url(); ?>/reserve/">ご予約はこちら</a></div>
         </div>
-        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
           <h3 class="m-block-title">注意事項</h3>
           <p class="u-m">ダウンロードはこちら</p>
           <div class="m-link"><a href="<?php echo get_template_directory_uri(); ?>/pdf/camp_form.pdf">PDF</a></div>
@@ -30,11 +30,63 @@ Template Name: camp
     </div>
   </section>
 
-  <?php get_template_part('inc/topics'); ?>
+  <section class="c-topics">
+    <div class="c-topics__inner">
+      <div class="c-topics__title" data-aos="fade-up" data-aos-delay="200">
+        <p class="en">TOPICS</p>
+        <h2 class="jp"><span>トピックス</span></h2>
+      </div>
+      <div class="c-topics-list" data-aos="fade-up" data-aos-delay="300">
+        <?php
+        $args=array(
+          'tax_query' => array( 
+            array(
+              'taxonomy' => 'topics-category',
+              'field' => 'slug',
+              'terms' => array( 'camp' )
+            ),
+          ),
+          'post_type' => 'topics',
+          'posts_per_page'=> 6
+        );
+        ?>
+        <?php query_posts( $args ); ?>
+        <?php if(have_posts()): ?>
+        <?php while(have_posts()):the_post(); ?>
+        <article class="c-topics-list__item">
+          <a href="<?php the_permalink() ?>">
+            <div class="time"><time><?php the_time('Y.m.d'); ?></time></div>
+            <div class="detail">
+              <div class="title"><?php the_title(); ?></div>
+              <div class="category">
+                <?php $custom_post_tag = 'topics-category';
+                $custom_post_tag_terms = wp_get_object_terms($post->ID, $custom_post_tag);
+                if(!empty($custom_post_tag_terms)){
+                  if(!is_wp_error( $custom_post_tag_terms )){
+                    foreach($custom_post_tag_terms as $term){
+                      $tag_term_link = get_term_link($term->slug, $custom_post_tag);
+                      $tag_term_name = $term->name;
+                      echo '<div class="item">'.$tag_term_name.'</div>';
+                    }
+                  }
+                }
+                ?>
+              </div>
+            </div>
+          </a>
+        </article>
+        <?php endwhile; else: ?>
+        <p>投稿がありません。</p>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+      </div>
+    </div>
+    <div class="m-link" data-aos="fade-up" data-aos-delay="400"><a href="<?php echo home_url(); ?>/topics/topics-category/camp/">一覧を見る</a></div>
+  </section>
 
   <section class="camp-guide">
     <div class="l-container">
-      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">利用案内</h2>
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">利用案内</h2>
       <table class="c-table__col2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         <tbody class="c-table-list">
           <tr class="c-table-list__item">
@@ -67,7 +119,7 @@ Template Name: camp
   </section>
   <section class="camp-leisure">
     <div class="l-container">
-      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">レジャー体験</h2>
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">レジャー体験</h2>
       <div class="l-col3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         <div class="l-col3__item">
           <div class="image"><img src="<?php echo get_template_directory_uri(); ?>/img/common/col-img.jpg"></div>
@@ -103,18 +155,16 @@ Template Name: camp
     </div>
   </section>
   <section class="camp-price">
-    <div class="l-container__large">
-      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">料金表</h2>
-      <div class="camp-price__usage" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+    <div class="l-container">
+      <h2 class="m-block-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">料金表</h2>
+      <div class="camp-price__usage" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         <div class="u-md">
           <table class="c-table__flex">
             <tbody>
               <tr>
                 <th><strong>利用料金</strong></th>
-                <th>日帰り<br>
-                  <span>10:00～17:00頃</span></th>
-                <th>宿　泊<br>
-                  <span>～17:00頃<br>(日帰り料金に加算)</span></th>
+                <th>日帰り<br><span>10:00～<br>17:00頃</span></th>
+                <th>宿　泊<br><span>～17:00頃<br><small>(日帰り料金に加算)</small></span></th>
                 <th>管理棟使用
                   <ul>
                     <li><span>ロフトのみ</span></li>
@@ -122,34 +172,30 @@ Template Name: camp
                     <li><span>ロフト+倉庫</span></li>
                   </ul>
                 </th>
-                <th>キャンプファイヤー</th>
+                <th>キャンプ<br>ファイヤー</th>
                 <th>駐車場</th>
               </tr>
               <tr>
-                <td>大人（中学生以上）</td>
+                <td>大人<small>（中学生以上）</small></td>
                 <td>300円</td>
                 <td>300円</td>
                 <td rowspan="3">
                   <ul>
-                    <li>一律<br>
-                      10,000円</li>
-                    <li>一律<br>
-                      10,000円</li>
-                    <li>一律<br>
-                      15,000円</li>
+                    <li>一律<br>10,000<small>円</small></li>
+                    <li>一律<br>10,000<small>円</small></li>
+                    <li>一律<br>15,000<small>円</small></li>
                   </ul>
                 </td>
-                <td rowspan="3">3,000円/回<br>
-                  <span>※芝維持費として</span></td>
+                <td rowspan="3">3,000円/回<br><span>※芝維持費として</span></td>
                 <td rowspan="3">300円/台</td>
               </tr>
               <tr>
-                <td>子供（5歳以上小学生以下）</td>
+                <td>子供<small>（5歳以上小学生以下）</small></td>
                 <td>200円</td>
                 <td>200円</td>
               </tr>
               <tr>
-                <td>幼児（4歳以下）</td>
+                <td>幼児<small>（4歳以下）</small></td>
                 <td>無料</td>
                 <td>無料</td>
               </tr>
@@ -249,25 +295,25 @@ Template Name: camp
                 <th>1日</th>
               </tr>
               <tr>
-                <td>鉄板（枚）</td>
+                <td>鉄板<small>（枚）</small></td>
                 <td>100円</td>
-                <td>やかん（個）</td>
+                <td>やかん<small>（個）</small></td>
                 <td>100円</td>
-                <td>ゴリ採り網（個）</td>
-                <td>100円</td>
-              </tr>
-              <tr>
-                <td>鉄網（枚）</td>
-                <td>100円</td>
-                <td>なべ（個）</td>
-                <td>100円</td>
-                <td>箱メガネ（個）</td>
+                <td>ゴリ採り網<small>（個）</small></td>
                 <td>100円</td>
               </tr>
               <tr>
-                <td>Ｕ字溝（本）</td>
+                <td>鉄網<small>（枚）</small></td>
+                <td>100円</td>
+                <td>なべ<small>（個）</small></td>
+                <td>100円</td>
+                <td>箱メガネ<small>（個）</small></td>
+                <td>100円</td>
+              </tr>
+              <tr>
+                <td>Ｕ字溝<small>（本）</small></td>
                 <td>300円</td>
-                <td>飯盒（個）</td>
+                <td>飯盒<small>（個）</small></td>
                 <td>100円</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -325,15 +371,15 @@ Template Name: camp
           </table>
         </div>
       </div>
-      <div class="camp-price__sale" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
+      <div class="camp-price__sale" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
         <div class="u-md">
           <table class="c-table__flex">
             <tbody>
               <tr>
                 <th>販売料金</th>
-                <td>薪（束）</td>
+                <td>薪<small>（束）</small></td>
                 <td>600円</td>
-                <td>炭（3kg）</td>
+                <td>炭<small>（3kg）</small></td>
                 <td>800円</td>
               </tr>
               <tr>
@@ -369,12 +415,12 @@ Template Name: camp
   <section class="camp-contact">
     <div class="l-container">
       <div class="l-col2">
-        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
           <h3 class="m-block-title">ご予約</h3>
           <p class="u-m">予約申込はこちらから</p>
           <div class="m-link"><a href="<?php echo home_url(); ?>/reserve/">ご予約はこちら</a></div>
         </div>
-        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+        <div class="l-col2__item" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
           <h3 class="m-block-title">注意事項</h3>
           <p class="u-m">ダウンロードはこちら</p>
           <div class="m-link"><a href="<?php echo get_template_directory_uri(); ?>/pdf/camp_form.pdf">PDF</a></div>

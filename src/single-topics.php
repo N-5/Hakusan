@@ -8,10 +8,16 @@
         <div class="topics-header">
           <h1 class="topics-header__heading"><?php the_title() ?></h1>
           <div class="topics-header__category">
-            <?php
-              $terms = get_terms('topics-category');
-            foreach ( $terms as $term ) {
-              echo '<div class="item"><a href="'.get_term_link($term).'">'.$term->name.'</a></div>';
+            <?php $custom_post_tag = 'topics-category';
+            $custom_post_tag_terms = wp_get_object_terms($post->ID, $custom_post_tag);
+            if(!empty($custom_post_tag_terms)){
+              if(!is_wp_error( $custom_post_tag_terms )){
+                foreach($custom_post_tag_terms as $term){
+                  $tag_term_link = get_term_link($term->slug, $custom_post_tag);
+                  $tag_term_name = $term->name;
+                  echo '<div class="item"><a href="'.$tag_term_link.'">'.$tag_term_name.'</a></div>';
+                }
+              }
             }
             ?>
           </div>
@@ -35,7 +41,9 @@
           endif; ?>
         </div>
       </div>
-      <div class="m-link" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800"><a href="<?php echo home_url(); ?>/topics/">一覧へ</a></div>
+      <div class="topics-btn" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+        <div class="m-link"><a href="<?php echo home_url(); ?>/topics/">一覧へ</a></div>
+      </div>
       <?php endwhile; ?>
     </div>
   </div>
