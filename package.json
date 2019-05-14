@@ -1,7 +1,7 @@
 {
 	"name": "wordpress-development",
 	"version": "1.0.0",
-	"author": "Hiroki Omote",
+	"author": "Nakai Masahito",
 	"license": "GPL-2.0-or-later",
 	"dependencies": {
 		"aos": "^2.3.4",
